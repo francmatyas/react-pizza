@@ -16,9 +16,10 @@ function Body() {
         <Card img={pizza}/>
         <Card img={pizza}/>
         <Card img={pizza}/>
+        <Card img={pizza} cart/>
         <Card img={pizza}/>
         <Card img={pizza}/>
-
+        <Card img={pizza}/>
       </div>
     </div>
   );

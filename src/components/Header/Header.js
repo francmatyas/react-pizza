@@ -24,6 +24,7 @@ function Header() {
           <p>Contact</p>
         </div>
       </div>
+      <h3>React pizza DEMO</h3>
       <Filter />
     </div>
   );
