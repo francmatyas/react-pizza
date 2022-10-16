@@ -12,9 +12,9 @@ function Body() {
       <div className="body-img"></div>
       <Sidebar/>
       <div className="body-container">
-        <Card img={pizza} cart/>
-        <Card img={pizza}/>
-        <Card img={pizza}/>
+        <Card img={pizza} cart spicinesLevel={2}/>
+        <Card img={pizza} spicinesLevel={0}/>
+        <Card img={pizza} spicinesLevel={1}/>
         <Card img={pizza}/>
         <Card img={pizza} cart/>
         <Card img={pizza}/>
