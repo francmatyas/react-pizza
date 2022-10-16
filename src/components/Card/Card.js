@@ -26,6 +26,7 @@ function Card(props) {
         <h3 className="card-title">Pizza</h3>
         {SpicinesLevel[props.spicinesLevel]}
       </div>
+      <p className="card-footer">Click for more</p>
     </div>
   );
 }
