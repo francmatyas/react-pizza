@@ -44,12 +44,22 @@
     justify-content: center;
     align-items: center;
     margin: 1.5vw;
+    cursor: pointer;
+
+    border-radius: 15px;
+    padding: 0.5vw 1vw;
+
+    transition: 0.3s;
 
     p{
         margin: 0;
         margin-left: 0.5vw;
         margin-top: 0.2rem;
         font-size: large;
+    }
+    &:hover{
+        color: #fff;
+        background-color: #212121;
     }
 }
 
@@ -61,7 +71,6 @@
     transition: 0.3s;
 
     &:hover{
-        cursor: pointer;
         background-color: #f9a825;
     }
 }

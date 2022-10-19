@@ -1,11 +1,14 @@
 import "./Header.scss";
 import pizza from "../../assets/pizza-icon.png";
+import { useState } from "react";
 
 import { BsCart } from "react-icons/bs";
 import { AiOutlineMail, AiOutlineRead } from "react-icons/ai";
 import Filter from "../Filter/Filter";
 
 function Header() {
+  const [cart, setCart] = useState(0);
+
   return (
     <div className="header">
       

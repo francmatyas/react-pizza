@@ -15,10 +15,31 @@
 
     transition: box-shadow 0.5s ease-in-out;
 
+    transition: transform 0.8s;
+
     &:hover{
         transform: scale(1.02);
     }
 }
+
+.card.card-front{
+    height: 100%;
+    width: 100%;
+}
+
+.card.card-back{
+    height: 100%;
+    width: 100%;
+}
+
+.card.card-flip{
+    transform: rotateY(180deg);
+}
+
+.card .card-back{
+    transform: rotateY(180deg);
+}
+
 
 .card-img{
     width: 20vw;
@@ -81,5 +102,26 @@
 
     background-color: white;
     color: rgb(0, 0, 0, 0.5);
+}
+
+.card-price{
+    position: absolute;
+    bottom: 1vw;
+    right: 1vw;
+
+    margin: 0.5rem;
+
+    color: #424242;
+
+    z-index: 1;
+
+}
+
+.card-back{
+    padding: 1vw;
+
+    .card-title{
+
+    }
 }
 
