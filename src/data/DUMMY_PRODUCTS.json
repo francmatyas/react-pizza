@@ -1,0 +1,89 @@
+[
+  {
+    "title": "Margherita",
+    "description": "Tomato sauce, mozzarella, basil",
+    "spicinesLevel": null,
+    "price": 5.0,
+    "cart": true,
+    "id": 1
+  },
+  {
+    "title": "Pepperoni",
+    "description": "Tomato sauce, mozzarella, pepperoni",
+    "spicinesLevel": 0,
+    "price": 6.0,
+    "cart": false,
+    "id": 2
+  },
+  {
+    "title": "Quattro Stagioni",
+    "description": "Tomato sauce, mozzarella, ham, mushrooms, artichokes, olives",
+    "spicinesLevel": null,
+    "price": 7.0,
+    "cart": true,
+    "id": 3
+  },
+  { "title": "Quattro Formaggi",
+   "description": "Cream sauce, mozzarella, gorgonzola, parmesan, pecorino",
+   "spicinesLevel": null,
+    "price": 7.0,
+    "cart": false,
+    "id": 4
+  },
+  {
+    "title": "Hawaiian",
+    "description": "Tomato sauce, mozzarella, ham, pineapple",
+    "spicinesLevel": null,
+    "price": 6.5,
+    "cart": true,
+    "id": 5
+  },
+  {
+    "title": "Veggie",
+    "description": "Tomato sauce, mozzarella, mushrooms, olives, peppers",
+    "spicinesLevel": null,
+    "price": 6.5,
+    "cart": false,
+    "id": 6
+  },
+  {
+    "title": "Meat Lovers",
+    "description": "Tomato sauce, mozzarella, pepperoni, ham, sausage",
+    "spicinesLevel": null,
+    "price": 7.0,
+    "cart": false,
+    "id": 7
+  },
+  {
+    "title": "Diavola",
+    "description": "Tomato sauce, mozzarella, salami piccante, olives, habanero",
+    "spicinesLevel": 2,
+    "price": 7.0,
+    "cart": true,
+    "id": 8
+  },
+  {
+    "title": "BBQ Chicken",
+    "description": "BBQ sauce, mozzarella, chicken, red onion",
+    "spicinesLevel": 1,
+    "price": 7.0,
+    "cart": false,
+    "id": 9
+  },
+  {
+    "title": "Buffalo",
+    "description": "Buffalo sauce, mozzarella, chicken, red onion",
+    "spicinesLevel": null,
+    "price": 7.0,
+    "cart": false,
+    "id": 10
+  },
+  {
+    "title": "Ortolana",
+    "description": "Tomato sauce, mozzarella, eggplant, zucchini, peppers",
+    "spicinesLevel": null,
+    "price": 7.0,
+    "cart": false,
+    "id": 11
+  }
+]

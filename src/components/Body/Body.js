@@ -1,25 +1,25 @@
 import "./Body.scss";
+import { useState } from "react";
 
 import pizza from "../../assets/pizza.png";
 
 import Filter from "../Filter/Filter";
 import Card from "../Card/Card";
-import Sidebar from "../Header/Header";
+import Header from "../Header/Header";
+import Cart from "../Cart/Cart";
 
 function Body(props) {
+  const [showCart, setShowCart] = useState(false);
+
   return (
     <div className="body">
       <div className="body-img"></div>
-      <Sidebar/>
+      {showCart && <Cart />}
+      <Header />
       <div className="body-container">
-        <Card img={pizza} title={"Pizza"} price={8} cart spicinesLevel={2}/>
-        <Card img={pizza} title={"Pizza"} price={8} spicinesLevel={0}/>
-        <Card img={pizza} title={"Pizza"} price={9} spicinesLevel={1}/>
-        <Card img={pizza} title={"Pizza"} price={8}/>
-        <Card img={pizza} title={"Pizza"} price={9} cart/>
-        <Card img={pizza} title={"Pizza"} price={8}/>
-        <Card img={pizza} title={"Pizza"} price={10}/>
-        <Card img={pizza} title={"Pizza"} price={10}/>
+        {props.products.map((product) => (
+          <Card img={pizza} {...product} key={product.id} />
+        ))}
       </div>
     </div>
   );

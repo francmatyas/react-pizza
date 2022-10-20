@@ -37,7 +37,10 @@
     }
 }
 .header-container__nav__item{
+    background-color: transparent;
     color: #eeeeee;
+
+    border: none;
 
     display: flex;
     flex-direction: row;
@@ -73,9 +76,10 @@
     &:hover{
         background-color: #f9a825;
     }
+    
 }
 
-h3{
+.header-demo{
     text-align: center;
 
     margin-right: 7.5vw;
