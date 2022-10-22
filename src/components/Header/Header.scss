@@ -1,8 +1,10 @@
 .header{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
+
+    z-index: 1;
 
     height: 6vw;
 
@@ -53,6 +55,11 @@
     padding: 0.5vw 1vw;
 
     transition: 0.3s;
+
+    &:link, &:visited, &:active{
+        text-decoration: none;
+        color: #eeeeee;
+    }
 
     p{
         margin: 0;

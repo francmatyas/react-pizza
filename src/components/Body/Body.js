@@ -3,10 +3,9 @@ import { useState } from "react";
 
 import pizza from "../../assets/pizza.png";
 
-import Filter from "../Filter/Filter";
 import Card from "../Card/Card";
-import Header from "../Header/Header";
 import Cart from "../Cart/Cart";
+import Filter from "../Filter/Filter";
 
 function Body(props) {
   const [showCart, setShowCart] = useState(false);
@@ -15,7 +14,7 @@ function Body(props) {
     <div className="body">
       <div className="body-img"></div>
       {showCart && <Cart />}
-      <Header />
+      <Filter />
       <div className="body-container">
         {props.products.map((product) => (
           <Card img={pizza} {...product} key={product.id} />
