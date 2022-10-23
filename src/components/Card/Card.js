@@ -1,6 +1,10 @@
 import "./Card.scss";
 import { useEffect, useState } from "react";
-import { BsCartPlus, BsCartCheckFill, BsChevronCompactLeft } from "react-icons/bs";
+import {
+  BsCartPlus,
+  BsCartCheckFill,
+  BsChevronCompactLeft,
+} from "react-icons/bs";
 import { TbHandClick } from "react-icons/tb";
 
 import { Spicy, SpicyHigh, SpicyExtream } from "./SpicinesLevel/SpicinesLevel";
@@ -39,10 +43,16 @@ function Card(props) {
             <div className="card-description__border"></div>
             <h3 className="card-title">{props.title}</h3>
             {SpicinesLevel[props.spicinesLevel]}
-            <h4 className="card-price">{props.price}$</h4>
           </div>
-          <button onClick={addToCartHandler} className="card-cart_add">Add to cart</button>
-          <p className="card-footer">Click for more <TbHandClick size={15}/> </p>
+          <div className="card-footer">
+            <h4 className="card-price">{props.price}$</h4>
+            <button onClick={addToCartHandler} className="card-cart_add">
+              Add to cart
+            </button>
+            <p>
+              Click for more <TbHandClick size={15} />{" "}
+            </p>
+          </div>
         </div>
       ) : (
         <div className="card-back">
@@ -56,9 +66,16 @@ function Card(props) {
           <h3 className="card-title__back">{props.title}</h3>
           {SpicinesLevel[props.spicinesLevel]}
           <p className="card-description__back">{props.description}</p>
-          <h4 className="card-price__back">{props.price}$</h4>
-          <button onClick={addToCartHandler} className="card-cart_add">Add to cart</button>
-          <p className="card-footer">Click for less <TbHandClick size={15}/> </p>
+          
+          <div className="card-footer">
+            <h4 className="card-price__back">{props.price}$</h4>
+            <button onClick={addToCartHandler} className="card-cart_add">
+              Add to cart
+            </button>
+            <p>
+              Click for less <TbHandClick size={15} />{" "}
+            </p>
+          </div>
         </div>
       )}
     </div>

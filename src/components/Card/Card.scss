@@ -2,6 +2,9 @@
   width: 24vw;
   height: 32vw;
 
+  min-width: 350px;
+  min-height: 470px;
+
   background-color: white;
 
   border-radius: 12px;
@@ -43,6 +46,8 @@
 .card-img {
   width: 20vw;
   height: 20vw;
+  min-height: 270px;
+  min-width: 270px;
   margin: 0 auto;
 }
 .card-description {
@@ -93,7 +98,9 @@
   left: 0;
   right: 0;
 
-  margin: 0 auto;
+  width: 100%;
+  height: 6vw;
+  min-height: 80px;
 
   font-size: 0.8rem;
 
@@ -118,15 +125,13 @@
 }
 
 .card-cart_add {
-  position: absolute;
-  bottom: 3vw;
-  left: 0;
-  right: 0;
-
   width: 11vw;
   height: 3vw;
+  min-height: 40px;
+  min-width: 120px;
 
   margin: 0 auto;
+  margin-bottom: 5px;
 
   background-color: #f57c00;
   color: #161a1d;
