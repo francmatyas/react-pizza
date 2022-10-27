@@ -7,9 +7,7 @@ import { AiOutlineMail } from "react-icons/ai";
 import { FiMap } from "react-icons/fi";
 import { Badge } from "react-bootstrap";
 
-function Header() {
-  const [cart, setCart] = useState(2);
-
+function Header(props) {
   return (
     <div className="header">
       <div className="header-nav">
@@ -19,6 +17,8 @@ function Header() {
         <a href="/cart" className="header-container__nav__item" id="header-nav__cart">
           <BsCart size={30} />
           <p>Cart</p>
+          {props.cartCount > 0 && <Badge className="header-cart__counter" bg="danger" pill>{props.cartCount}</Badge>}
+          
         </a>
         <a href="/delivery" className="header-container__nav__item">
           <FiMap size={30} />
@@ -29,7 +29,7 @@ function Header() {
           <p>Contact</p>
         </a>
       </div>
-      <h3 className="header-demo">React pizza DEMO</h3>
+      {/* <h3 className="header-demo">React pizza DEMO</h3> */}
     </div>
   );
 }

@@ -8,6 +8,7 @@ import {
   GiMushroomGills,
   GiCheeseWedge,
   GiOlive,
+  GiGarlic,
 } from "react-icons/gi";
 import { FaCarrot, FaFish } from "react-icons/fa";
 
@@ -19,6 +20,7 @@ function Filter({ value, onChange }) {
   const [mushroom, setMushroom] = useState(false);
   const [cheese, setCheese] = useState(false);
   const [olive, setOlive] = useState(false);
+  const [onion, setOnion] = useState(false);
 
   return (
     <div className="filter">
@@ -83,8 +85,24 @@ function Filter({ value, onChange }) {
           onClick={() => setOlive(!olive)}
           style={{ color: olive ? "#558b2f" : "#000" }}
         >
-          <GiOlive size={35} className="filter-icon" />
+          <div className="icon-container">
+            <GiOlive size={35} className="filter-icon" />
+            <div className="diagonal-cross"></div>
+          </div>
+
           <p>Olives</p>
+        </button>
+        <button
+          className="filter-option"
+          id="filter-onion"
+          onClick={() => setOnion(!onion)}
+          style={{ color: onion ? "#fbc02d" : "#000" }}
+        >
+          <div className="icon-container">
+            <GiGarlic size={35} className="filter-icon" />
+            <div className="diagonal-cross"></div>
+          </div>
+          <p>Onion</p>
         </button>
       </div>
     </div>
