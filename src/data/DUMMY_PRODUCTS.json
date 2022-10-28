@@ -25,12 +25,22 @@
   {
     "title": "Quattro Stagioni",
     "description": "Tomato sauce, mozzarella, ham, mushrooms, artichokes, olives",
+    "tags": [
+      "meat",
+      "cheese",
+      "mushrooms",
+      "olive"
+    ],
     "spicinesLevel": null,
     "price": 7.0,
     "id": 3
   },
   { "title": "Quattro Formaggi",
    "description": "Cream sauce, mozzarella, gorgonzola, parmesan, pecorino",
+   "tags": [
+    "veggie",
+    "cheese"
+  ],
    "spicinesLevel": null,
     "price": 7.0,
     "id": 4
@@ -38,6 +48,10 @@
   {
     "title": "Hawaiian",
     "description": "Tomato sauce, mozzarella, ham, pineapple",
+    "tags": [
+      "meat",
+      "cheese"
+    ],
     "spicinesLevel": null,
     "price": 6.5,
     "id": 5
@@ -45,6 +59,12 @@
   {
     "title": "Veggie",
     "description": "Tomato sauce, mozzarella, mushrooms, olives, peppers",
+    "tags": [
+      "veggie",
+      "cheese",
+      "mushrooms",
+      "olive"
+    ],
     "spicinesLevel": null,
     "price": 6.5,
     "id": 6
@@ -52,6 +72,10 @@
   {
     "title": "Meat Lovers",
     "description": "Tomato sauce, mozzarella, pepperoni, ham, sausage",
+    "tags": [
+      "meat",
+      "cheese"
+    ],
     "spicinesLevel": null,
     "price": 7.0,
     "id": 7
@@ -59,6 +83,12 @@
   {
     "title": "Diavola",
     "description": "Tomato sauce, mozzarella, salami piccante, olives, habanero",
+    "tags": [
+      "meat",
+      "cheese",
+      "spicy",
+      "olive"
+    ],
     "spicinesLevel": 2,
     "price": 7.0,
     "id": 8
@@ -66,6 +96,11 @@
   {
     "title": "BBQ Chicken",
     "description": "BBQ sauce, mozzarella, chicken, red onion",
+    "tags": [
+      "meat",
+      "cheese",
+      "spicy"
+    ],
     "spicinesLevel": 1,
     "price": 7.0,
     "id": 9
@@ -73,6 +108,10 @@
   {
     "title": "Buffalo",
     "description": "Buffalo sauce, mozzarella, chicken, red onion",
+    "tags": [
+      "meat",
+      "cheese"
+    ],
     "spicinesLevel": null,
     "price": 7.0,
     "id": 10
@@ -80,7 +119,12 @@
   {
     "title": "Ortolana",
     "description": "Tomato sauce, mozzarella, eggplant, zucchini, peppers",
-    "spicinesLevel": null,
+    "tags": [
+      "veggie",
+      "cheese",
+      "spicy"
+    ],
+    "spicinesLevel": 1,
     "price": 7.0,
     "id": 11
   }

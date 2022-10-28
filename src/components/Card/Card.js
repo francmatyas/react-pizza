@@ -7,15 +7,7 @@ import {
 } from "react-icons/bs";
 import { TbHandClick } from "react-icons/tb";
 
-import {
-  GiMeat,
-  GiChiliPepper,
-  GiMushroomGills,
-  GiCheeseWedge,
-  GiOlive,
-  GiGarlic,
-} from "react-icons/gi";
-import { FaCarrot, FaFish } from "react-icons/fa";
+import Tags from "./Tags";
 
 import { Spicy, SpicyHigh, SpicyExtream } from "./SpicinesLevel/SpicinesLevel";
 
@@ -24,17 +16,6 @@ const SpicinesLevel = [
   <SpicyHigh className="card-spicines-level" />,
   <SpicyExtream className="card-spicines-level" />,
 ];
-
-const Tags = {
-  veggie: <div className="card-tag"><FaCarrot size={25}/></div>,
-  meat: <div className="card-tag"> <GiMeat size={25}/> </div>,
-  fish: <div className="card-tag"> <FaFish size={25}/> </div>,
-  spicy: <div className="card-tag" style={{"backgroundColor": {}, "border": "red solid 1px"}}> <GiChiliPepper size={25}/> </div>,
-  mushrooms: <div className="card-tag"> <GiMushroomGills size={25}/> </div>,
-  cheese: <div className="card-tag"> <GiCheeseWedge size={25}/> </div>,
-  olive: <div className="card-tag"> <GiOlive size={25}/> </div>,
-  onion: <div className="card-tag"> <GiGarlic size={25}/> </div>,
-};
 
 function Card(props) {
   const [flip, setFlip] = useState(false);
@@ -64,7 +45,11 @@ function Card(props) {
             <div className="card-description__border"></div>
             <h3 className="card-title">{props.title}</h3>
             {SpicinesLevel[props.spicinesLevel]}
-            {Tags.spicy}
+            <div className="card-tags">
+              {typeof props.tags !== "undefined" &&
+                props.tags.length > 0 &&
+                props.tags.map((tag) => Tags[tag].tag)}
+            </div>
           </div>
           <div className="card-footer">
             <h4 className="card-price">{props.price}$</h4>

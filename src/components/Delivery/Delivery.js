@@ -40,7 +40,6 @@ function Delivery() {
           </MapContainer>
         }
         <div className="delivery-map__legend">
-          {" "}
           <div className="map__legend-item">
             <img src={marker} height="40px"/>
             <p><strong>Restaurant</strong></p>

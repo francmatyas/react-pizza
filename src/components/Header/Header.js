@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import { BsCart } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
-import { FiMap } from "react-icons/fi";
+import {TbTruckDelivery} from 'react-icons/tb'
 import { Badge } from "react-bootstrap";
 
 function Header(props) {
@@ -21,7 +21,7 @@ function Header(props) {
           
         </a>
         <a href="/delivery" className="header-container__nav__item">
-          <FiMap size={30} />
+          <TbTruckDelivery size={30} />
           <p>Delivery</p>
         </a>
         <a href="/contact" className="header-container__nav__item">
