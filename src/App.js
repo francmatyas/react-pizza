@@ -1,6 +1,6 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import 'leaflet/dist/leaflet.css';
+import "leaflet/dist/leaflet.css";
 
 import { useState } from "react";
 
@@ -10,7 +10,10 @@ import Header from "./components/Header/Header";
 import Body from "./components/Body/Body";
 import Delivery from "./components/Delivery/Delivery";
 import Cart from "./components/Cart/Cart";
-import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import {
+  Route,
+  Routes,
+} from "react-router-dom";
 
 function App() {
   const [products, setProducts] = useState(DUMMY_PRODUCTS);
@@ -19,7 +22,7 @@ function App() {
 
   function addToCartHandler(data) {
     setCartCount(cartCount + 1);
-    
+
     setCart((prevCart) => {
       const existingItem = prevCart.find((item) => item.id === data.id);
       if (existingItem) {
@@ -38,24 +41,25 @@ function App() {
           item.id === data.id ? { ...item, cart } : item
         );
       } else {
-        return [...prevProducts, { ...data}];
+        return [...prevProducts, { ...data }];
       }
     });
     console.log(cart);
   }
-    
 
   return (
-    <Router>
-      <div className="App">
-        <Header cartCount={cartCount}/>
-        <Routes>
-          <Route exact path="/" element={<Body products={products} onCartAdd={addToCartHandler} />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/delivery" element={<Delivery />} />
-        </Routes>
-      </div>
-    </Router>
+    <div className="App">
+      <Header cartCount={cartCount} />
+      <Routes>
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/delivery" element={<Delivery />} />
+        <Route
+          path="/"
+          exact
+          element={<Body products={products} onCartAdd={addToCartHandler} />}
+        />
+      </Routes>
+    </div>
   );
 }
 
