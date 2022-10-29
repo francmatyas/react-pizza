@@ -19,9 +19,11 @@ function App() {
   const [products, setProducts] = useState(DUMMY_PRODUCTS);
   const [cart, setCart] = useState([]);
   const [cartCount, setCartCount] = useState(0);
+  const [cartTotal, setCartTotal] = useState(0);
 
   function addToCartHandler(data) {
     setCartCount(cartCount + 1);
+    setCartTotal(cartTotal + data.price);
 
     setCart((prevCart) => {
       const existingItem = prevCart.find((item) => item.id === data.id);
@@ -44,14 +46,13 @@ function App() {
         return [...prevProducts, { ...data }];
       }
     });
-    console.log(cart);
   }
 
   return (
     <div className="App">
       <Header cartCount={cartCount} />
       <Routes>
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart" element={<Cart total={cartTotal} count={cartCount} items={cart} />} />
         <Route path="/delivery" element={<Delivery />} />
         <Route
           path="/"

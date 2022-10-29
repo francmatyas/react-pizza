@@ -1,5 +1,12 @@
 .tag{
+    height: 48px;
+    width: 48px;
     padding: 6px;
     border-radius: 15px;
     margin: 3px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
