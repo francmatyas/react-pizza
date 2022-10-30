@@ -1,10 +1,15 @@
 import "./Cart.scss";
 
-import { BsTrash } from "react-icons/bs";
-import { FaPlus, FaMinus } from "react-icons/fa";
-import Tags from "../Card/Tags";
+import { useState } from "react";
+import CartItem from "./CartItem";
 
 function Cart(props) {
+    const [cart, setCart] = useState(props.items);
+
+    function changeCartHandler(amount){
+        console.log(amount)
+    }
+
   return (
     <div className="cart">
       <div className="cart-container">
@@ -14,39 +19,10 @@ function Cart(props) {
             <p>Remove all</p>
           </button>
         </div>
-
         <div className="cart-container__items">
-          {props.items.length > 0 ? (
-            props.items.map((item) => (
-              <div className="cart-item">
-                <div className="cart-item__img">
-                  <img src={item.img} />
-                </div>
-                <div className="cart-item__title">
-                  <h3>{item.title}</h3>
-                  <div className="cart-item__tags">
-                    {typeof item.tags !== "undefined" &&
-                      item.tags.length > 0 &&
-                      item.tags.map((tag) => Tags[tag].tag)}
-                  </div>
-                </div>
-
-                <div className="cart-item__amount">
-                  <button className="cart-item__amount-btn">
-                    <FaPlus size={10} />
-                  </button>
-                  {item.amount}
-                  <button className="cart-item__amount-btn">
-                    <FaMinus size={10} />
-                  </button>
-                </div>
-                <div className="cart-item__footer">
-                  <h3>{item.price}€</h3>
-                  <button className="cart-item__remove">
-                    Remove
-                  </button>
-                </div>
-              </div>
+          {cart.length > 0 ? (
+            cart.map((item) => (
+              <CartItem {...item} onItemChange={changeCartHandler}/>
             ))
           ) : (
             <div className="cart-empty">
