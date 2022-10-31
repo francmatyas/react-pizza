@@ -1,28 +1,36 @@
 import "./Cart.scss";
 
-import { useState } from "react";
 import CartItem from "./CartItem";
 
 function Cart(props) {
-    const [cart, setCart] = useState(props.items);
-
-    function changeCartHandler(amount){
-        console.log(amount)
-    }
+  function updateAmountHandler(data, amountAction) {
+    props.onCartChange(data, amountAction);
+  }
+  function removeItemHandler(data) {
+    props.onRemoveItem(data);
+  }
+  function removeAllHandler() {
+    props.onRemoveAll();
+  }
 
   return (
     <div className="cart">
       <div className="cart-container">
         <div className="cart-header">
           <h4>Shopping Cart</h4>
-          <button className="cart__remove-all">
+          <button className="cart__remove-all" onClick={removeAllHandler}>
             <p>Remove all</p>
           </button>
         </div>
         <div className="cart-container__items">
-          {cart.length > 0 ? (
-            cart.map((item) => (
-              <CartItem {...item} onItemChange={changeCartHandler}/>
+          {props.items.length > 0 ? (
+            props.items.map((item) => (
+              <CartItem
+                {...item}
+                updateAmount={updateAmountHandler}
+                removeItem={removeItemHandler}
+                key={Math.random()}
+              />
             ))
           ) : (
             <div className="cart-empty">

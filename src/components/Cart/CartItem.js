@@ -1,14 +1,19 @@
 import "./CartItem.scss";
-import { useState } from "react";
 
 import { FaPlus, FaMinus } from "react-icons/fa";
 import Tags from "../Card/Tags";
 
 function CartItem(props) {
-    const [amount, setAmount] = useState(props.amount);
+  function increaseAmountHandler(){
+    props.updateAmount(props, true);
+  }
+  function decreaseAmountHandler(){
+    props.updateAmount(props, false);
+  }
+  function removeItemHandler(){
+    props.removeItem(props);
+  }
 
-    function changeItemHandler(newAmount){
-    }
 
   return (
     <div className="cart-item">
@@ -25,17 +30,28 @@ function CartItem(props) {
       </div>
 
       <div className="cart-item__amount">
-        <button className="cart-item__amount-btn" onClick={() => setAmount(amount + 1)}>
+        <button
+          className="cart-item__amount-btn"
+          onClick={increaseAmountHandler}
+        >
           <FaPlus size={10} />
         </button>
-        {amount}
-        <button className="cart-item__amount-btn" onClick={() => setAmount(amount - 1)}>
+        {props.amount}
+        <button
+          className="cart-item__amount-btn"
+          onClick={decreaseAmountHandler}
+        >
           <FaMinus size={10} />
         </button>
       </div>
       <div className="cart-item__footer">
         <h3>{props.price}€</h3>
-        <button className="cart-item__remove">Remove</button>
+        <button
+          className="cart-item__remove"
+          onClick={removeItemHandler}
+        >
+          Remove
+        </button>
       </div>
     </div>
   );
