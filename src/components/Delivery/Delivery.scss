@@ -4,29 +4,31 @@
 
 .delivery{
     position: absolute;
-    top: 6vw;
+    top: 6rem;
     left: 0;
     right: 0;
     bottom: 0;
 
+    background-color: #f5f5f5;
+
     overflow-y: auto;
 }
 .delivery__title{
-    font-size: 2.5vw;
+    font-size: 2.5rem;
     font-weight: 700;
-    margin: 2vw 0;
+    margin: 2rem 0;
 }
 
 .delivery-map-container{
-    width: 80vw;
+    width: 80rem;
     height: auto;
     margin: 0 auto;
 
     .delivery-map__legend{
-    height: 4vw;
+    height: 4rem;
     width: 100%;
 
-    margin: 1vw 0;
+    margin: 1rem 0;
 
     display: flex;
     justify-content: space-around;
@@ -43,10 +45,10 @@
         }
     }
     .delivery-map{
-        height: 40vw;
+        height: 40rem;
         border-radius: 20px;
         align-self: center;
-        margin-top: 2vw;
+        margin-top: 2rem;
     }
 }
 

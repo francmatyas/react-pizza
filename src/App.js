@@ -7,9 +7,10 @@ import { useState } from "react";
 import DUMMY_PRODUCTS from "./data/DUMMY_PRODUCTS.json";
 
 import Header from "./components/Header/Header";
-import Body from "./components/Body/Body";
+import ProductGrid from "./components/ProductGrid/ProductGrid";
 import Delivery from "./components/Delivery/Delivery";
 import Cart from "./components/Cart/Cart";
+import Contact from "./components/Contact/Contact";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
@@ -97,6 +98,13 @@ function App() {
     <div className="App">
       <Header cartCount={cartCount} />
       <Routes>
+      <Route
+          path="/"
+          exact
+          element={
+            <ProductGrid products={products} onCartAdd={addToCartHandler} />
+          }
+        />
         <Route
           path="/cart"
           element={
@@ -111,11 +119,7 @@ function App() {
           }
         />
         <Route path="/delivery" element={<Delivery />} />
-        <Route
-          path="/"
-          exact
-          element={<Body products={products} onCartAdd={addToCartHandler} />}
-        />
+        <Route path="/contact" element={<Contact/>} />
       </Routes>
     </div>
   );

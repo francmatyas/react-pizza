@@ -1,4 +1,4 @@
-import "./Card.scss";
+import "./Product.scss";
 import { useEffect, useState } from "react";
 import {
   BsCartPlus,

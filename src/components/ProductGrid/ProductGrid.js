@@ -1,10 +1,10 @@
-import "./Body.scss";
+import "./ProductGrid.scss";
 import { useState } from "react";
 
 import pizza from "../../assets/pizza.png";
 
-import Card from "../Card/Card";
-import Filter from "../Filter/Filter";
+import Product from "../Card/Product";
+import Filter from "../Header/Filter/Filter";
 
 function Body(props) {
   const [showCart, setShowCart] = useState(false);
@@ -14,12 +14,12 @@ function Body(props) {
   }
 
   return (
-    <div className="body">
-      <div className="body-img"></div>
+    <div className="product-grid">
+      <div className="product-grid__img"></div>
       <Filter />
-      <div className="body-container">
+      <div className="product-grid__container">
         {props.products.map((product) => (
-          <Card onCartAdd={addToCartHandler} img={pizza} {...product} key={product.id} />
+          <Product onCartAdd={addToCartHandler} img={pizza} {...product} key={product.id} />
         ))}
       </div>
     </div>

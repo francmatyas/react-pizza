@@ -1,0 +1,50 @@
+.contact{
+    position: absolute;
+    top: 6rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: #f5f5f5;
+}
+
+.contact__banner{
+    width: 40rem;
+    height: 40rem;
+
+    border-radius: 20px;
+}
+
+.contact__title{
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 2rem 0;
+}
+
+.contact__label{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 2rem 0;
+}
+.contact__input{
+    border: none;
+    border-bottom: 2px solid #424242;
+    background-color: transparent;
+}
+.contact__button{
+    margin: 2rem 0;
+    padding: 16px 32px;
+    color: #f5f5f5;
+    background-color: #424242;
+
+    border: none;
+    border-radius: 20px;
+    
+    transition: 0.3s;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    &:hover{
+        cursor: pointer;
+        background-color: #616161;
+    }
+}

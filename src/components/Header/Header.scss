@@ -6,7 +6,7 @@
 
     z-index: 1;
 
-    height: 6vw;
+    height: 6rem;
 
     background-color: #161a1d;
 
@@ -20,7 +20,7 @@
     top: 0;
     left: 0;
     bottom: 0;
-    width: fit-content;
+    width: min-content;
 
     display: flex;
     flex-direction: row;
@@ -29,9 +29,9 @@
 }
 
 .header-container__logo{
-    height: 4.5vw;
+    height: 5rem;
     transition: ease-in-out 0.7s;
-    margin: 1vw;
+    margin: 1rem;
 
     &:hover{
         cursor: pointer;
@@ -48,11 +48,11 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 1.5vw;
+    margin: 1.5rem;
     cursor: pointer;
 
     border-radius: 15px;
-    padding: 0.5vw 1vw;
+    padding: 0.75rem 1.5rem;
 
     transition: 0.3s;
 
@@ -63,7 +63,7 @@
 
     p{
         margin: 0;
-        margin-left: 0.5vw;
+        margin-left: 0.5rem;
         margin-top: 0.2rem;
         font-size: large;
     }
@@ -75,10 +75,6 @@
 
 #header-nav__cart{
     background-color: #f57c00;
-    border-radius: 15px;
-    padding: 0.5vw 1vw;
-
-    transition: 0.3s;
 
     &:hover{
         background-color: #f9a825;
@@ -89,7 +85,7 @@
 .header-demo{
     text-align: center;
 
-    margin-right: 7.5vw;
+    margin-right: 7.5rem;
 }
 
 .header-cart__counter{

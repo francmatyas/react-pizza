@@ -34,7 +34,7 @@ function Delivery() {
             <Circle center={position} color="#039be5" radius={3500} />
             <Marker position={position} icon={icon}>
               <Popup>
-                A pretty CSS3 popup. <br /> Easily customizable.
+                Restaurant
               </Popup>
             </Marker>
           </MapContainer>

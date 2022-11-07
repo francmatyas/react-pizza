@@ -11,7 +11,7 @@
 
 .cart {
   position: absolute;
-  top: 6vw;
+  top: 6rem;
   right: 0;
   left: 0;
   bottom: 0;
@@ -28,7 +28,7 @@
   left: 0;
   bottom: 0;
 
-  margin: 3vw;
+  margin: 3rem;
 
   display: grid;
   grid-template-rows: [row1-start] min-content [row1-end row2-start] auto [row2-end row3-start] min-content [row3-end];
@@ -37,7 +37,7 @@
   background-color: white;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
-  padding: 2vw 3vw;
+  padding: 2rem 3rem;
 }
 
 .cart-header {
@@ -87,14 +87,14 @@
 
   align-self: flex-end;
 
-  height: fit-content;
+  height: min-content;
 
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
 
-  padding-top: 1vw;
+  padding-top: 1rem;
 
   .cart-subtotal {
     display: flex;
@@ -141,8 +141,8 @@
     border-radius: 25px;
     font-weight: 600;
 
-    height: fit-content;
-    width: fit-content;
+    height: min-content;
+    width: min-content;
 
     padding: 16px 32px;
     transition: 0.3s;
