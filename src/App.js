@@ -19,6 +19,17 @@ function App() {
   const [cartCount, setCartCount] = useState(0);
   const [cartTotal, setCartTotal] = useState(0);
 
+  const [filter, setFilter] = useState({
+    meat: false,
+    fish: false,
+    vegetarian: false,
+    spicy: false,
+    mushroom: false,
+    cheese: false,
+    olive: false,
+    onion: false,
+  });
+
   function addToCartHandler(data) {
     setCartCount(cartCount + 1);
     setCartTotal(cartTotal + data.price);
@@ -94,15 +105,25 @@ function App() {
     });
   }
 
+  function updateFilterHandler(data) {
+    setFilter(data);
+    console.log(filter);
+  }
+
   return (
     <div className="App">
       <Header cartCount={cartCount} />
       <Routes>
-      <Route
+        <Route
           path="/"
           exact
           element={
-            <ProductGrid products={products} onCartAdd={addToCartHandler} />
+            <ProductGrid
+              products={products}
+              onCartAdd={addToCartHandler}
+              onFilterUpdate={updateFilterHandler}
+              filter={filter}
+            />
           }
         />
         <Route
@@ -119,7 +140,7 @@ function App() {
           }
         />
         <Route path="/delivery" element={<Delivery />} />
-        <Route path="/contact" element={<Contact/>} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </div>
   );

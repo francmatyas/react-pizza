@@ -2,11 +2,7 @@ import "./Contact.scss";
 
 import Banner from "../../assets/banner.png";
 
-import {
-  AiOutlineInstagram,
-  AiOutlineFacebook,
-  AiOutlineTwitter,
-} from "react-icons/ai";
+import {BsFacebook, BsInstagram, BsTwitter} from "react-icons/bs";
 
 function Contact() {
   return (
@@ -37,9 +33,9 @@ function Contact() {
             <button className="contact__button">Contact Us</button>
           </form>
           <div className="contact__socials">
-            <AiOutlineInstagram className="contact__socials-icon" />
-            <AiOutlineFacebook className="contact__socials-icon" />
-            <AiOutlineTwitter className="contact__socials-icon" />
+            <BsInstagram className="contact__socials-icon" id="social-instagram"/>
+            <BsFacebook className="contact__socials-icon" id="social-facebook"/>
+            <BsTwitter className="contact__socials-icon" id="social-twitter"/>
           </div>
         </div>
       </div>

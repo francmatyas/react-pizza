@@ -1,6 +1,5 @@
 import "./Header.scss";
 import pizza from "../../assets/pizza-icon.png";
-import { useState } from "react";
 
 import { BsCart } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";

@@ -12,15 +12,44 @@ import {
 } from "react-icons/gi";
 import { FaCarrot, FaFish } from "react-icons/fa";
 
-function Filter({ value, onChange }) {
-  const [meat, setMeat] = useState(false);
-  const [fish, setFish] = useState(false);
-  const [vegetarian, setVegetarian] = useState(false);
-  const [spicy, setSpicy] = useState(false);
-  const [mushroom, setMushroom] = useState(false);
-  const [cheese, setCheese] = useState(false);
-  const [olive, setOlive] = useState(false);
-  const [onion, setOnion] = useState(false);
+function Filter(props) {
+  /*
+  function filterHandler(filter) {
+    switch (filter) {
+      case "meat":
+        props.onFilterUpdate({ ...props.filter, meat: !props.filter.meat });
+        break;
+      case "fish":
+        props.onFilterUpdate({ ...props.filter, fish: !props.filter.fish });
+        break;
+      case "vegetarian":
+        props.onFilterUpdate({
+          ...props.filter,
+          vegetarian: !props.filter.vegetarian,
+        });
+        break;
+      case "spicy":
+        props.onFilterUpdate({ ...props.filter, spicy: !props.filter.spicy });
+        break;
+      case "mushroom":
+        props.onFilterUpdate({
+          ...props.filter,
+          mushroom: !props.filter.mushroom,
+        });
+        break;
+      case "cheese":
+        props.onFilterUpdate({ ...props.filter, cheese: !props.filter.cheese });
+        break;
+      case "olive":
+        props.onFilterUpdate({ ...props.filter, olive: !props.filter.olive });
+        break;
+      case "onion":
+        props.onFilterUpdate({ ...props.filter, onion: !props.filter.onion });
+        break;
+      default:
+        break;
+    }
+  }*/
 
   return (
     <div className="filter">
@@ -28,8 +57,10 @@ function Filter({ value, onChange }) {
         <button
           className="filter-option"
           id="filter-meat"
-          onClick={() => setMeat(!meat)}
-          style={{ color: meat ? "#e53935" : "#000" }}
+          onClick={() =>
+            props.onFilterUpdate({ ...props.filter, meat: !props.filter.meat })
+          }
+          style={{ color: props.filter.meat ? "#e53935" : "#000" }}
         >
           <GiMeat size={35} className="filter-icon" />
           <p>Meat</p>
@@ -37,8 +68,10 @@ function Filter({ value, onChange }) {
         <button
           className="filter-option"
           id="filter-fish"
-          onClick={() => setFish(!fish)}
-          style={{ color: fish ? "#039be5" : "#000" }}
+          onClick={() => {
+            props.onFilterUpdate({ ...props.filter, fish: !props.filter.fish });
+          }}
+          style={{ color: props.filter.fish ? "#039be5" : "#000" }}
         >
           <FaFish size={35} className="filter-icon" />
           <p>Fish</p>
@@ -46,8 +79,10 @@ function Filter({ value, onChange }) {
         <button
           className="filter-option"
           id="filter-veggie"
-          onClick={() => setVegetarian(!vegetarian)}
-          style={{ color: vegetarian ? "#43a047" : "#000" }}
+          onClick={() => { 
+            props.onFilterUpdate({ ...props.filter, vegetarian: !props.filter.vegetarian });
+          }}
+          style={{ color: props.filter.vegetarian ? "#43a047" : "#000" }}
         >
           <FaCarrot size={35} className="filter-icon" />
           <p>Vegetarian</p>
@@ -55,8 +90,10 @@ function Filter({ value, onChange }) {
         <button
           className="filter-option"
           id="filter-spicy"
-          onClick={() => setSpicy(!spicy)}
-          style={{ color: spicy ? "#c62828" : "#000" }}
+          onClick={() => { 
+            props.onFilterUpdate({ ...props.filter, spicy: !props.filter.spicy });
+          }}
+          style={{ color: props.filter.spicy ? "#c62828" : "#000" }}
         >
           <GiChiliPepper size={35} className="filter-icon" />
           <p>Spicy</p>
@@ -64,8 +101,10 @@ function Filter({ value, onChange }) {
         <button
           className="filter-option"
           id="filter-mushrooms"
-          onClick={() => setMushroom(!mushroom)}
-          style={{ color: mushroom ? "#9e9e9e" : "#000" }}
+          onClick={() => { 
+            props.onFilterUpdate({ ...props.filter, mushroom: !props.filter.mushroom });
+          }}
+          style={{ color: props.filter.mushroom ? "#9e9e9e" : "#000" }}
         >
           <GiMushroomGills size={35} className="filter-icon" />
           <p>Mushrooms</p>
@@ -73,8 +112,10 @@ function Filter({ value, onChange }) {
         <button
           className="filter-option"
           id="filter-cheese"
-          onClick={() => setCheese(!cheese)}
-          style={{ color: cheese ? "#ffb300" : "#000" }}
+          onClick={() => {
+            props.onFilterUpdate({ ...props.filter, cheese: !props.filter.cheese });
+          }}
+          style={{ color: props.filter.cheese ? "#ffb300" : "#000" }}
         >
           <GiCheeseWedge size={35} className="filter-icon" />
           <p>Cheese</p>
@@ -82,21 +123,24 @@ function Filter({ value, onChange }) {
         <button
           className="filter-option"
           id="filter-olives"
-          onClick={() => setOlive(!olive)}
-          style={{ color: olive ? "#558b2f" : "#000" }}
+          onClick={() => {
+            props.onFilterUpdate({ ...props.filter, olive: !props.filter.olive });
+          }}
+          style={{ color: props.filter.olive ? "#558b2f" : "#000" }}
         >
           <div className="icon-container">
             <GiOlive size={35} className="filter-icon" />
             <div className="diagonal-cross"></div>
           </div>
-
           <p>Olives</p>
         </button>
         <button
           className="filter-option"
           id="filter-onion"
-          onClick={() => setOnion(!onion)}
-          style={{ color: onion ? "#fbc02d" : "#000" }}
+          onClick={() => {
+            props.onFilterUpdate({ ...props.filter, onion: !props.filter.onion });
+          }}
+          style={{ color: props.filter.onion ? "#fbc02d" : "#000" }}
         >
           <div className="icon-container">
             <GiGarlic size={35} className="filter-icon" />

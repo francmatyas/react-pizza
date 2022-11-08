@@ -77,6 +77,9 @@
       &:focus {
         outline: none;
       }
+      &::placeholder {
+        font-weight: 500;
+      }
     }
     .contact__button {
       margin: 2rem 0;
@@ -94,14 +97,25 @@
       &:hover {
         cursor: pointer;
         background-color: #616161;
-      }
+      }      
     }
   }
 
   .contact__socials-icon{
     width: 3rem;
     height: 3rem;
-    margin: 0 0.5rem;
+    margin: 0 1rem;
+
+    transition: 0.3s;
+  }
+  #social-instagram:hover {
+    color: #e1306c;
+  }
+  #social-facebook:hover {
+    color: #3b5998;
+  }
+  #social-twitter:hover {
+    color: #1da1f2;
   }
 }
 /*
