@@ -15,12 +15,14 @@ import Contact from "./components/Contact/Contact";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
+  const [cookies, setCookies] = useCookies('filter');
+
   const [products, setProducts] = useState(DUMMY_PRODUCTS);
   const [cart, setCart] = useState([]);
   const [cartCount, setCartCount] = useState(0);
   const [cartTotal, setCartTotal] = useState(0);
 
-  const [filter, setFilter] = useState({
+  const [filter, setFilter] = useState(cookies.filter || {
     meat: false,
     fish: false,
     vegetarian: false,
@@ -30,11 +32,6 @@ function App() {
     olive: false,
     onion: false,
   });
-
-  const [filterCookie, setFilterCookie] = useCookies("filter");
-  const [cartCookie, setCartCookie] = useCookies("cart");
-
-  console.log(filter);
 
   function addToCartHandler(data) {
     setCartCount(cartCount + 1);
@@ -112,6 +109,7 @@ function App() {
   }
 
   function updateFilterHandler(data) {
+    setCookies("filter", data, { path: "/" });
     setFilter(data);
   }
 
