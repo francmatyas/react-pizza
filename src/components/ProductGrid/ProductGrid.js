@@ -1,5 +1,4 @@
 import "./ProductGrid.scss";
-import { useState } from "react";
 
 import pizza from "../../assets/pizza.png";
 

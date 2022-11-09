@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "leaflet/dist/leaflet.css";
 
 import { useState } from "react";
+import {Cookies, useCookies} from 'react-cookie';
 
 import DUMMY_PRODUCTS from "./data/DUMMY_PRODUCTS.json";
 
@@ -29,6 +30,11 @@ function App() {
     olive: false,
     onion: false,
   });
+
+  const [filterCookie, setFilterCookie] = useCookies("filter");
+  const [cartCookie, setCartCookie] = useCookies("cart");
+
+  console.log(filter);
 
   function addToCartHandler(data) {
     setCartCount(cartCount + 1);
@@ -107,7 +113,6 @@ function App() {
 
   function updateFilterHandler(data) {
     setFilter(data);
-    console.log(filter);
   }
 
   return (
