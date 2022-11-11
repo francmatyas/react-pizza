@@ -121,7 +121,7 @@ function TagOnion() {
     </div>
   );
 }
-export default {
+const Tags = {
   veggie: {tag: <TagVeggie/>, title: "Vegetarian"},
   meat: {tag: <TagMeat/>, title: "Meat"},
   fish: {tag: <TagFish/>, title: "Fish"},
@@ -131,3 +131,5 @@ export default {
   olive: {tag: <TagOlive/>, title: "Olive"},
   onion: {tag: <TagOnion/>, title: "Onion"},
 };
+  
+export default Tags;

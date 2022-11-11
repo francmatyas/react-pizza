@@ -8,7 +8,7 @@ function Contact() {
   return (
     <div className="contact">
       <div className="contact__banner">
-        <img src={Banner} />
+        <img src={Banner} alt="contact img"/>
       </div>
 
       <div className="contact__content">

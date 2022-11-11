@@ -3,7 +3,6 @@ import marker from "../../assets/pizza-icon.png";
 import {
   MapContainer,
   TileLayer,
-  useMap,
   Marker,
   Popup,
   Circle,
@@ -41,7 +40,7 @@ function Delivery() {
         }
         <div className="delivery-map__legend">
           <div className="map__legend-item">
-            <img src={marker} height="40px"/>
+            <img src={marker} height="40px" alt="shop icon"/>
             <p><strong>Restaurant</strong></p>
           </div>
           <div className="map__legend-item">

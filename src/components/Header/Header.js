@@ -12,7 +12,7 @@ function Header(props) {
     <div className="header">
       <div className="header-nav">
         <Link to={"/"}>
-          <img href="/" src={pizza} className="header-container__logo" />
+          <img href="/" src={pizza} className="header-container__logo" alt="logo"/>
         </Link>
         <Link to={"/cart"} className="header-container__nav__item" id="header-nav__cart">
           <BsCart size={30} />

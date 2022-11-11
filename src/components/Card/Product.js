@@ -1,9 +1,8 @@
 import "./Product.scss";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   BsCartPlus,
   BsCartCheckFill,
-  BsChevronCompactLeft,
 } from "react-icons/bs";
 import { TbHandClick } from "react-icons/tb";
 
@@ -39,7 +38,7 @@ function Card(props) {
               <BsCartPlus size={30} />
             )}
           </div>
-          <img className="card-img" src={props.img} />
+          <img className="card-img" src={props.img} alt="product"/>
 
           <div className="card-description">
             <div className="card-description__border"></div>

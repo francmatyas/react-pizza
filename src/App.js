@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "leaflet/dist/leaflet.css";
 
 import { useState } from "react";
-import {Cookies, useCookies} from 'react-cookie';
+import {useCookies} from 'react-cookie';
 
 import DUMMY_PRODUCTS from "./data/DUMMY_PRODUCTS.json";
 
@@ -32,6 +32,7 @@ function App() {
     olive: false,
     onion: false,
   });
+  console.log(filter)
 
   function addToCartHandler(data) {
     setCartCount(cartCount + 1);
@@ -112,6 +113,34 @@ function App() {
     setCookies("filter", data, { path: "/" });
     setFilter(data);
   }
+  
+  const filteredProducts = products.filter((product) => {
+    if (filter.meat && !product.tags.includes("meat")) {
+      return false;
+    }
+    if (filter.fish && !product.tags.includes("fish")) {
+      return false;
+    }
+    if (filter.vegetarian && !product.tags.includes("veggie")) {
+      return false;
+    }
+    if (filter.spicy && !product.tags.includes("spicy")) {
+      return false;
+    }
+    if (filter.mushroom && !product.tags.includes("mushroom")) {
+      return false;
+    }
+    if (filter.cheese && !product.tags.includes("cheese")) {
+      return false;
+    }
+    if (filter.olive && product.tags.includes("olive")) {
+      return false;
+    }
+    if (filter.onion && product.tags.includes("onion")) {
+      return false;
+    }
+    return true;
+  });
 
   return (
     <div className="App">
@@ -122,7 +151,7 @@ function App() {
           exact
           element={
             <ProductGrid
-              products={products}
+              products={filteredProducts}
               onCartAdd={addToCartHandler}
               onFilterUpdate={updateFilterHandler}
               filter={filter}
