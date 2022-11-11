@@ -127,7 +127,7 @@ function App() {
     if (filter.spicy && !product.tags.includes("spicy")) {
       return false;
     }
-    if (filter.mushroom && !product.tags.includes("mushroom")) {
+    if (filter.mushroom && !product.tags.includes("mushrooms")) {
       return false;
     }
     if (filter.cheese && !product.tags.includes("cheese")) {
