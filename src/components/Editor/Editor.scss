@@ -33,10 +33,10 @@
   .editor__product {
     display: grid;
     grid-template-rows: [image-start] min-content [image-end info-start] min-content [info-end];
+    margin: 0 0.5rem;
 
     border: 1px solid #e5e5e5;
     border-radius: 5px;
-    margin: 0 0.5rem;
 
     display: flex;
     align-items: center;
