@@ -3,7 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "leaflet/dist/leaflet.css";
 
 import { useState } from "react";
-import {useCookies} from 'react-cookie';
+import { useCookies } from "react-cookie";
+import { Route, Routes } from "react-router-dom";
 
 import DUMMY_PRODUCTS from "./data/DUMMY_PRODUCTS.json";
 
@@ -12,27 +13,29 @@ import ProductGrid from "./components/ProductGrid/ProductGrid";
 import Delivery from "./components/Delivery/Delivery";
 import Cart from "./components/Cart/Cart";
 import Contact from "./components/Contact/Contact";
-import { Route, Routes } from "react-router-dom";
+import Editor from "./components/Editor/Editor";
 
 function App() {
-  const [cookies, setCookies] = useCookies('filter');
+  const [cookies, setCookies] = useCookies("filter");
 
   const [products, setProducts] = useState(DUMMY_PRODUCTS);
   const [cart, setCart] = useState([]);
   const [cartCount, setCartCount] = useState(0);
   const [cartTotal, setCartTotal] = useState(0);
 
-  const [filter, setFilter] = useState(cookies.filter || {
-    meat: false,
-    fish: false,
-    vegetarian: false,
-    spicy: false,
-    mushroom: false,
-    cheese: false,
-    olive: false,
-    onion: false,
-  });
-  console.log(filter)
+  const [filter, setFilter] = useState(
+    cookies.filter || {
+      meat: false,
+      fish: false,
+      vegetarian: false,
+      spicy: false,
+      mushroom: false,
+      cheese: false,
+      olive: false,
+      onion: false,
+    }
+  );
+  console.log(filter);
 
   function addToCartHandler(data) {
     setCartCount(cartCount + 1);
@@ -113,7 +116,7 @@ function App() {
     setCookies("filter", data, { path: "/" });
     setFilter(data);
   }
-  
+
   const filteredProducts = products.filter((product) => {
     if (filter.meat && !product.tags.includes("meat")) {
       return false;
@@ -144,35 +147,62 @@ function App() {
 
   return (
     <div className="App">
-      <Header cartCount={cartCount} />
       <Routes>
         <Route
           path="/"
           exact
           element={
-            <ProductGrid
-              products={filteredProducts}
-              onCartAdd={addToCartHandler}
-              onFilterUpdate={updateFilterHandler}
-              filter={filter}
-            />
+            <>
+              <Header cartCount={cartCount} />
+              <ProductGrid
+                products={filteredProducts}
+                onCartAdd={addToCartHandler}
+                onFilterUpdate={updateFilterHandler}
+                filter={filter}
+              />
+            </>
           }
         />
         <Route
           path="/cart"
           element={
-            <Cart
-              total={cartTotal}
-              count={cartCount}
-              items={cart}
-              onCartChange={updateAmountHandler}
-              onRemoveItem={removeItemHandler}
-              onRemoveAll={clearCartHandler}
-            />
+            <>
+              <Header cartCount={cartCount} />
+              <Cart
+                total={cartTotal}
+                count={cartCount}
+                items={cart}
+                onCartChange={updateAmountHandler}
+                onRemoveItem={removeItemHandler}
+                onRemoveAll={clearCartHandler}
+              />
+            </>
           }
         />
-        <Route path="/delivery" element={<Delivery />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route
+          path="/delivery"
+          element={
+            <>
+              <Header cartCount={cartCount} />
+              <Delivery />
+            </>
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <>
+              <Header cartCount={cartCount} />
+              <Contact />
+            </>
+          }
+        />
+        <Route
+          path="/edit"
+          element={
+            <Editor/>
+          }
+        />
       </Routes>
     </div>
   );

@@ -63,6 +63,7 @@
       "veggie",
       "cheese",
       "mushrooms",
+      "onion",
       "olive"
     ],
     "spicinesLevel": null,
@@ -74,7 +75,8 @@
     "description": "Tomato sauce, mozzarella, pepperoni, ham, sausage",
     "tags": [
       "meat",
-      "cheese"
+      "cheese",
+      "onion"
     ],
     "spicinesLevel": null,
     "price": 7.0,
@@ -87,7 +89,8 @@
       "meat",
       "cheese",
       "spicy",
-      "olive"
+      "olive",
+      "onion"
     ],
     "spicinesLevel": 2,
     "price": 7.0,
@@ -110,7 +113,8 @@
     "description": "Buffalo sauce, mozzarella, chicken, red onion",
     "tags": [
       "meat",
-      "cheese"
+      "cheese",
+      "onion"
     ],
     "spicinesLevel": null,
     "price": 7.0,

@@ -2,7 +2,7 @@ import "./ProductGrid.scss";
 
 import pizza from "../../assets/pizza.png";
 
-import Product from "../Card/Product";
+import Product from "../Product/Product";
 import Filter from "../Header/Filter/Filter";
 
 function Body(props) {

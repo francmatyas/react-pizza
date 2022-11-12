@@ -114,7 +114,7 @@ function Filter(props) {
           className="filter-option"
           id="filter-onion"
           onClick={() => setOnion(!onion)}
-          style={{ color: onion ? "#fbc02d" : "#000" }}
+          style={{ color: onion ? "#C78FAA" : "#000" }}
         >
           <div className="icon-container">
             <GiGarlic size={35} className="filter-icon" />
