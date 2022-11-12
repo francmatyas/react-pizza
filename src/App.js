@@ -200,7 +200,7 @@ function App() {
         <Route
           path="/edit"
           element={
-            <Editor/>
+            <Editor products={products}/>
           }
         />
       </Routes>

@@ -47,7 +47,12 @@ function Cart(props) {
             </div>
             <h3>{props.total}€</h3>
           </div>
-          <button className="cart-checkout">Checkout</button>
+          <button
+            className="cart-checkout"
+            style={props.count == 0 ? { backgroundColor: "#bdbdbd" } : {}}
+          >
+            Checkout
+          </button>
         </div>
       </div>
     </div>

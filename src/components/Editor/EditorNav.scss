@@ -1,0 +1,29 @@
+.editor-nav{
+    grid-column: nav-start / nav-end;
+
+    background-color: #161A1D;
+    padding: 2rem 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    h3{
+        color: #eeeeee; 
+    }
+}
+
+.editor-nav__exit{
+    background-color: transparent;
+    color: #eeeeee;
+    border: none;
+    cursor: pointer;
+
+    &:hover{
+        color: #eeeeee;
+    }
+    &:active{
+        color: #eeeeee;
+    }
+}
