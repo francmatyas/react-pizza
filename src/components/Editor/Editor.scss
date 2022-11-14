@@ -25,9 +25,10 @@
 
   overflow-x: scroll;
   overflow-y: hidden;
+  padding-bottom: 4px;
 
   &::-webkit-scrollbar {
-    height: 0;
+    height: 8px;
   }
 
   .editor__product {
@@ -53,7 +54,7 @@
 
     .editor__product__img {
       grid-row: image-start / image-end;
-      width: 8rem;
+      width: 12rem;
       object-fit: contain;
     }
   }
@@ -67,6 +68,58 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  .editor__add{
+    width: 16rem;
+    height: 4rem;
+    margin: 1rem;
+
+    background-color: #f57c00;
+    border: none;
+    border-radius: 15px;
+
+    font-weight: 500;
+    font-size: 1.2rem;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      background-color: #f9a825;
+      color: #161a1d;;
+    }
+  }
+
+  .editor__fields{
+    width: 100%;
+    height: min-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .editor__inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .editor__input{
+    width: 48rem;
+    height: 4rem;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+  }
+  .editor__description{
+    width: 48rem;
+    height: 14rem;
+    resize: none;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    margin-left: 1rem;
+  }
 
   .editor__tags {
     display: flex;
