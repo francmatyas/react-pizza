@@ -69,9 +69,11 @@
   align-items: center;
   justify-content: center;
 
-  .editor__add{
-    width: 16rem;
-    height: 4rem;
+  padding: 0 2rem;
+
+  .editor__button{
+    width: 10rem;
+    height: 3rem;
     margin: 1rem;
 
     background-color: #f57c00;
@@ -79,7 +81,7 @@
     border-radius: 15px;
 
     font-weight: 500;
-    font-size: 1.2rem;
+    font-size: 1rem;
 
     &:hover {
       cursor: pointer;
@@ -106,19 +108,25 @@
   }
 
   .editor__input{
-    width: 48rem;
+    width: 35vw;
     height: 4rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding: 0.5rem 1rem;
-    margin: 0.5rem;
+    margin: 0.5rem 0;
+
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
   }
   .editor__description{
-    width: 48rem;
+    width: 35vw;
     height: 14rem;
     resize: none;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding: 0.5rem 1rem;
     margin-left: 1rem;
+
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
   }
 
   .editor__tags {
@@ -127,4 +135,38 @@
     align-items: center;
     justify-content: center;
   }
+}
+
+.editor__edit__controls{
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* 
+#button-submit{
+} */
+
+#button-delete{
+  color: #f44336;
+  background-color: #fff;
+  border: 2px solid #f44336;
+  &:hover {
+    color: #ff7961;
+    background-color: #fff;
+    border: 2px solid #ff7961;
+  }
+}
+
+.editor__tags{
+  height: 14rem;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
+  margin-left: 1rem;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
 }

@@ -35,7 +35,6 @@ function App() {
       onion: false,
     }
   );
-  console.log(filter);
 
   function addToCartHandler(data) {
     setCartCount(cartCount + 1);

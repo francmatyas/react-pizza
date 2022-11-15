@@ -4,6 +4,7 @@ import pizzaImg from "../../assets/pizza.png";
 import { useState } from "react";
 
 import EditorNav from "./EditorNav";
+import { Form } from "react-bootstrap";
 
 function Editor(props) {
   const [selected, setSelected] = useState(props.products[0]);
@@ -13,6 +14,8 @@ function Editor(props) {
   const [price, setPrice] = useState(props.products[0].price);
   const [tags, setTags] = useState(props.products[0].tags);
   const [spicy, setSpicy] = useState(props.products[0].spicy);
+
+  const [create, setCreate] = useState(false);
 
   function handlePizzaSelect(product) {
     setSelected(product);
@@ -46,7 +49,9 @@ function Editor(props) {
               onClick={() => handlePizzaSelect(product)}
               className="editor__product"
               key={product.id}
-              style={product.id == selected.id ? { border: "2px solid #f57c00" } : {}}
+              style={
+                product.id == selected.id ? { border: "2px solid #f57c00" } : {}
+              }
             >
               <div className="editor__product__name">{product.title}</div>
               <img
@@ -58,10 +63,12 @@ function Editor(props) {
           ))}
         </div>
         <div className="editor__edit">
-          <button className="editor__add">Add Product</button>
+          <button onClick={() => setCreate(!create)} className="editor__button">
+            New Product
+          </button>
           <div className="editor__fields">
             <div className="editor__inputs">
-              <input
+              <Form.Control
                 value={title}
                 onChange={handleTitleChange}
                 className="editor__input"
@@ -93,6 +100,64 @@ function Editor(props) {
               className="editor__description"
               placeholder="Description"
             />
+            <div className="editor__tags">
+            <Form>
+              <Form.Check
+                type="switch"
+                label="Meat"
+                id="meat"
+                className="editor__tag"
+                value={tags.includes("meat")}
+              />
+              <Form.Check
+                type="switch"
+                label="Vegetarian"
+                id="vegetarian"
+                className="editor__tag"
+              />
+              <Form.Check
+                type="switch"
+                label="Fish"
+                id="fish"
+                className="editor__tag"
+              />
+              <Form.Check
+                type="switch"
+                label="Mushrooms"
+                id="mushrooms"
+                className="editor__tag"
+              />
+              <Form.Check
+                type="switch"
+                label="Cheese"
+                id="cheese"
+                className="editor__tag"
+              />
+              <Form.Check
+                type="switch"
+                label="Olives"
+                id="olives"
+                className="editor__tag"
+              />
+              <Form.Check
+                type="switch"
+                label="Onion"
+                id="onion"
+                className="editor__tag"
+              />
+            </Form>
+          </div>
+          </div>
+          <div className="editor__edit__controls">
+            {create && (
+              <button className="editor__button" id="button-submit">
+                Submit
+              </button>
+            )}
+
+            <button className="editor__button" id="button-delete">
+              Delete
+            </button>
           </div>
         </div>
       </div>
