@@ -37,7 +37,22 @@ function Editor(props) {
   }
   function handleSpicyChange(event) {
     setSpicy(event.target.value);
+    setTags(
+      tags.includes("spicy")
+        ? tags.filter((tag) => tag !== "spicy")
+        : [...tags, "spicy"]
+    );
   }
+  function handleCreateChange() {
+    setCreate(!create);
+    setTitle("");
+    setDescription("");
+    setPrice("");
+    setTags([]);
+    setSpicy(false);
+  }
+
+  console.log(tags);
 
   return (
     <div className="editor">
@@ -63,12 +78,16 @@ function Editor(props) {
           ))}
         </div>
         <div className="editor__edit">
-          <button onClick={() => setCreate(!create)} className="editor__button">
-            New Product
+          <button
+            onClick={handleCreateChange}
+            className="editor__button button-add"
+            id={create && "button-cancel"}
+          >
+            {create ? "Cancel" : "New Product"}
           </button>
           <div className="editor__fields">
             <div className="editor__inputs">
-              <Form.Control
+              <input
                 value={title}
                 onChange={handleTitleChange}
                 className="editor__input"
@@ -101,63 +120,118 @@ function Editor(props) {
               placeholder="Description"
             />
             <div className="editor__tags">
-            <Form>
-              <Form.Check
-                type="switch"
-                label="Meat"
-                id="meat"
-                className="editor__tag"
-                value={tags.includes("meat")}
-              />
-              <Form.Check
-                type="switch"
-                label="Vegetarian"
-                id="vegetarian"
-                className="editor__tag"
-              />
-              <Form.Check
-                type="switch"
-                label="Fish"
-                id="fish"
-                className="editor__tag"
-              />
-              <Form.Check
-                type="switch"
-                label="Mushrooms"
-                id="mushrooms"
-                className="editor__tag"
-              />
-              <Form.Check
-                type="switch"
-                label="Cheese"
-                id="cheese"
-                className="editor__tag"
-              />
-              <Form.Check
-                type="switch"
-                label="Olives"
-                id="olives"
-                className="editor__tag"
-              />
-              <Form.Check
-                type="switch"
-                label="Onion"
-                id="onion"
-                className="editor__tag"
-              />
-            </Form>
-          </div>
+              <Form>
+                <Form.Check
+                  type="switch"
+                  label="Meat"
+                  id="meat"
+                  className="editor__tag"
+                  checked={tags.includes("meat")}
+                  onChange={() => {
+                    setTags(
+                      tags.includes("meat")
+                        ? tags.filter((tag) => tag !== "meat")
+                        : [...tags, "meat"]
+                    );
+                  }}
+                />
+                <Form.Check
+                  type="switch"
+                  label="Vegetarian"
+                  id="vegetarian"
+                  className="editor__tag"
+                  checked={tags.includes("veggie")}
+                  onChange={() => {
+                    setTags(
+                      tags.includes("veggie")
+                        ? tags.filter((tag) => tag !== "veggie")
+                        : [...tags, "veggie"]
+                    );
+                  }}
+                />
+                <Form.Check
+                  type="switch"
+                  label="Fish"
+                  id="fish"
+                  className="editor__tag"
+                  checked={tags.includes("fish")}
+                  onChange={() => {
+                    setTags(
+                      tags.includes("fish")
+                        ? tags.filter((tag) => tag !== "fish")
+                        : [...tags, "fish"]
+                    );
+                  }}
+                />
+                <Form.Check
+                  type="switch"
+                  label="Mushrooms"
+                  id="mushrooms"
+                  className="editor__tag"
+                  checked={tags.includes("mushrooms")}
+                  onChange={() => {
+                    setTags(
+                      tags.includes("mushrooms")
+                        ? tags.filter((tag) => tag !== "mushrooms")
+                        : [...tags, "mushrooms"]
+                    );
+                  }}
+                />
+                <Form.Check
+                  type="switch"
+                  label="Cheese"
+                  id="cheese"
+                  className="editor__tag"
+                  checked={tags.includes("cheese")}
+                  onChange={() => {
+                    setTags(
+                      tags.includes("cheese")
+                        ? tags.filter((tag) => tag !== "cheese")
+                        : [...tags, "cheese"]
+                    );
+                  }}
+                />
+                <Form.Check
+                  type="switch"
+                  label="Olives"
+                  id="olives"
+                  className="editor__tag"
+                  checked={tags.includes("olives")}
+                  onChange={() => {
+                    setTags(
+                      tags.includes("olives")
+                        ? tags.filter((tag) => tag !== "olives")
+                        : [...tags, "olives"]
+                    );
+                  }}
+                />
+                <Form.Check
+                  type="switch"
+                  label="Onion"
+                  id="onion"
+                  className="editor__tag"
+                  checked={tags.includes("onion")}
+                  onChange={() => {
+                    setTags(
+                      tags.includes("onion")
+                        ? tags.filter((tag) => tag !== "onion")
+                        : [...tags, "onion"]
+                    );
+                  }}
+                />
+              </Form>
+            </div>
           </div>
           <div className="editor__edit__controls">
-            {create && (
+            {create ? (
               <button className="editor__button" id="button-submit">
                 Submit
               </button>
+            ) : (
+              <button className="editor__button" id="button-delete">
+                Delete
+              </button>
             )}
-
-            <button className="editor__button" id="button-delete">
-              Delete
-            </button>
           </div>
         </div>
       </div>

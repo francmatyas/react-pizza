@@ -17,6 +17,8 @@
   grid-template-rows: [select-start] min-content [select-end edit-start] max-content [edit-end];
 }
 
+// ------------------- Product selector -------------------
+
 .editor__select {
   grid-row: select-start / select-end;
   margin: 1rem 0;
@@ -60,21 +62,22 @@
   }
 }
 
+// ------------------- Product editor -------------------
+
 .editor__edit {
   width: 100%;
   height: 100%;
+
+  padding: 0 2rem;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  padding: 0 2rem;
-
-  .editor__button{
+  .editor__button {
     width: 10rem;
     height: 3rem;
-    margin: 1rem;
 
     background-color: #f57c00;
     border: none;
@@ -82,54 +85,75 @@
 
     font-weight: 500;
     font-size: 1rem;
+    transition: 0.3s;
 
     &:hover {
       cursor: pointer;
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
       background-color: #f9a825;
-      color: #161a1d;;
+      color: #161a1d;
     }
   }
 
-  .editor__fields{
-    width: 100%;
-    height: min-content;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+  .button-add {
+    align-self: flex-end;
+  }
+  #button-cancel{
+    color: #f57c00;
+    border: solid #f57c00 2px;
+    background-color: #fff;
+    &:hover{
+      background-color: rgba(245, 124, 0, 0.1);
+    }
   }
 
-  .editor__inputs{
+  .editor__fields {
+    width: 100%;
+    height: min-content;
+    margin: 1rem 0;
+
+    display: grid;
+    grid-template-columns: [fields-start] auto [fields-end description-start] auto [description-end tags-start] min-content [tags-end];
+    gap: 1rem;
+  }
+
+  .editor__inputs {
+    grid-column: fields-start / fields-end;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 0.5rem;
   }
 
-  .editor__input{
-    width: 35vw;
-    height: 4rem;
+  .editor__input {
+    width: 100%;
+    flex: 1;
     font-size: 1.2rem;
     padding: 0.5rem 1rem;
-    margin: 0.5rem 0;
 
     border: 1px solid #e5e5e5;
     border-radius: 5px;
   }
-  .editor__description{
-    width: 35vw;
+  .editor__description {
+    grid-column: description-start / description-end;
     height: 14rem;
     resize: none;
     font-size: 1.2rem;
     padding: 0.5rem 1rem;
-    margin-left: 1rem;
 
     border: 1px solid #e5e5e5;
     border-radius: 5px;
   }
 
   .editor__tags {
+    grid-column: tags-start / tags-end;
+
+    padding: 0.5rem 1rem;
+
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -137,36 +161,33 @@
   }
 }
 
-.editor__edit__controls{
+.editor__edit__controls {
   width: 100%;
   height: 4rem;
+
+  gap: 0.5rem;
+
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-}
 
-/* 
-#button-submit{
-} */
-
-#button-delete{
-  color: #f44336;
-  background-color: #fff;
-  border: 2px solid #f44336;
-  &:hover {
-    color: #ff7961;
+  #button-delete {
+    color: #f44336;
     background-color: #fff;
-    border: 2px solid #ff7961;
+    border: 2px solid #f44336;
+    &:hover {
+      background-color: rgba(244, 67, 54, 0.1);
+    }
   }
-}
-
-.editor__tags{
-  height: 14rem;
-  padding: 0.5rem 1rem;
-  margin: 0.5rem 0;
-  margin-left: 1rem;
-
-  border: 1px solid #e5e5e5;
-  border-radius: 5px;
+  #button-submit {
+    color: #fff;
+    background-color: #4caf50;
+    border: 2px solid #4caf50;
+    &:hover {
+      color: #fff;
+      background-color: #64BB67;
+      border: 2px solid #64BB67;
+    }
+  }
 }
