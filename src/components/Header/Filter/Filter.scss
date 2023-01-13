@@ -29,7 +29,7 @@ button.filter-option{
     border: none;
 
     margin: 0 1rem;
-    color: black;
+    //color: black;
     font-size: 1.5rem;
     cursor: pointer;
 
@@ -45,6 +45,11 @@ button.filter-option{
     }
 }
 
+button.disabled{
+    opacity: 0.50;
+    cursor: not-allowed;
+}
+/* 
 button#filter-meat:hover p, button#filter-meat:hover .filter-icon{
     color: #e53935;
     transition: 0.3s;
@@ -76,7 +81,7 @@ button#filter-olives:hover p, button#filter-olives:hover .filter-icon{
 button#filter-onion:hover p, button#filter-onion:hover .filter-icon{
     color: #C78FAA;
     transition: 0.3s;
-}
+} */
 
 .icon-container{
     position: relative;

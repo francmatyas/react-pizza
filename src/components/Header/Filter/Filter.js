@@ -22,7 +22,52 @@ function Filter(props) {
   const [olive, setOlive] = useState(props.filter.olive);
   const [onion, setOnion] = useState(props.filter.onion);
 
+  const [meatDisabled, setMeatDisabled] = useState(false);
+  const [fishDisabled, setFishDisabled] = useState(false);
+  const [vegetarianDisabled, setVegetarianDisabled] = useState(false);
+
   const [filterRender, setFilterRender] = useState(true);
+
+  function meatFilterHandler() {
+    if (meat) {
+      setMeat(false);
+      !fish && setVegetarianDisabled(false);
+    }
+    else{
+      if(!vegetarian){
+        setMeat(true);
+        setVegetarianDisabled(true);
+      }
+    }
+  }
+  function fishFilterHandler() {
+    if (fish) {
+      setFish(false);
+      !meat && setVegetarianDisabled(false);
+    }
+    else{
+      if(!vegetarian){
+        setFish(true);
+        setVegetarianDisabled(true);
+      }
+    }
+  }
+  function vegetarianFilterHandler() {
+    if (vegetarian) {
+      setVegetarian(false);
+      setMeatDisabled(false);
+      setFishDisabled(false);
+    }
+    else{
+      if(!meat && !fish){
+        setVegetarian(true);
+        setMeatDisabled(true);
+        setFishDisabled(true);
+      }
+    }
+  }
+
+  console.log(meatDisabled, vegetarianDisabled)
 
   useEffect(() => {
     if (filterRender) {
@@ -45,27 +90,27 @@ function Filter(props) {
     <div className="filter">
       <div className="filter-container">
         <button
-          className="filter-option"
+          className={meatDisabled ? "filter-option disabled" : "filter-option"}
           id="filter-meat"
-          onClick={() => setMeat(!meat)}
+          onClick={meatFilterHandler}
           style={{ color: meat ? "#e53935" : "#000" }}
         >
           <GiMeat size={35} className="filter-icon" />
           <p>Meat</p>
         </button>
         <button
-          className="filter-option"
+           className={fishDisabled ? "filter-option disabled" : "filter-option"}
           id="filter-fish"
-          onClick={() => setFish(!fish)}
+          onClick={fishFilterHandler}
           style={{ color: fish ? "#039be5" : "#000" }}
         >
           <FaFish size={35} className="filter-icon" />
           <p>Fish</p>
         </button>
         <button
-          className="filter-option"
+          className={vegetarianDisabled ? "filter-option disabled" : "filter-option"}
           id="filter-veggie"
-          onClick={() => setVegetarian(!vegetarian)}
+          onClick={vegetarianFilterHandler}
           style={{ color: vegetarian ? "#43a047" : "#000" }}
         >
           <FaCarrot size={35} className="filter-icon" />

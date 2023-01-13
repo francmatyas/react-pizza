@@ -1,7 +1,7 @@
 import "./CartItem.scss";
 
 import { FaPlus, FaMinus } from "react-icons/fa";
-import Tags from "../Product/Tags";
+import Tags from "../ProductGrid/Product/Tags";
 
 function CartItem(props) {
   function increaseAmountHandler(){
